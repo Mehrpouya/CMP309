@@ -1,10 +1,10 @@
 # Site settings
-title: Freelancer
+title: "CMP309: Mobile Development"
 email: your-email@domain.com
-url: https://github.com/jeromelachaud/freelancer-theme
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
-keywords: "your keywords, separated by commas"
-skills: "Web Developer - Graphic Artist - User Experience Designer"
+url: https://mehrpouya.github.io/CMP309/
+description: "Here we share all case studies conducted on different mobile apps."
+keywords: "Mobile app, deconstruction, mobile architecture"
+skills: "User Experience Design, Mobile architecture, user workflows"
 meta_author: LastName FirstName
 
 # Google webmaster tools
@@ -17,7 +17,7 @@ bing_verify:
 # - static : pass through formspree.io to validate email sending
 # - disqus : replace contact form by disqus thread
 # - comment the line below if you want to stick with the default PHP contact form
-contact: static
+# contact: static
 
 # If you use disqus you need disqus shortname
 # https://help.disqus.com/customer/portal/articles/466208
