@@ -32,12 +32,13 @@ private val LightColorScheme = lightColorScheme(
     onSurface = Color(0xFF1C1B1F),
     */
 )
-private val SadColorScheme = lightColorScheme(//This is you saying where to get the defaults from
-                                              //then you override values you want to change.
-    primary = sadBlue,//I defined sadBlue and sadGreen in the Color.kt file. Check it out and add you own ones.
+//This is you saying where to get the defaults from
+//then you override values you want to change.
+private val SadColorScheme = lightColorScheme(
+    //I defined sadBlue and sadGreen in the Color.kt file.
+    primary = sadBlue,
     secondary = sadGreen,
     tertiary = Pink40
-
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
     surface = Color(0xFFFFFBFE),

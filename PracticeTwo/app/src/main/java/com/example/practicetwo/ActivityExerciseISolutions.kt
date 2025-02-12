@@ -35,8 +35,6 @@ import com.example.practicetwo.ui.theme.SadTheme
 class ActivityExerciseISolutions : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //enableEdgeToEdge()//Uncomment me to see the effects
-        //Enables the edge-to-edge display for this ComponentActivity
         setContent {
 
             SadTheme {
@@ -58,7 +56,6 @@ fun StartApp(names: List<String> = listOf("Hadi", "Alessandro", "Luke")) {
     } else {
         UserManagementSolution(names = names)
     }
-
 }
 
 

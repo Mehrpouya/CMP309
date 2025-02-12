@@ -38,9 +38,14 @@ if you struggle in following exercises, feel free to follow the codelab below be
 * */
 class PipelinePrintActivity : ComponentActivity() {
     var clickCounter: Int = 0
-    //var clickCounter
-    //perform basic application startup logic.
-    //happens only once for the entire life of the activity
+    /* onCreate is called when the activity is first created.
+    - performs basic application startup logic.
+    - happens only once for the entire life of the activity
+    When writing the onCreate function, usually set up the following:
+    - Declaring the user interface,
+    - Defining member variables
+    - Configuring some of the UI.
+*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -57,6 +62,27 @@ class PipelinePrintActivity : ComponentActivity() {
                 }
             }
         }
+    }
+    /*
+   _   _       _   _
+  | \ | | ___ | |_(_) ___ ___
+  |  \| |/ _ \| __| |/ __/ _ \
+  | |\  | (_) | |_| | (_|  __/
+  |_| \_|\___/ \__|_|\___\___|
+
+  // Try minimising your app
+  * moving to previous activity by swiping right on emulator or your phone and notice how different callbacks are being called depending on your activity state.
+  * */
+    override fun onPause() {
+        super.onPause()
+        val toast = Toast.makeText(applicationContext,"Lifecycle onPause called", Toast.LENGTH_LONG).show()
+        // Pause ongoing tasks, such as animations or sensitive data changes
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val toast = Toast.makeText(applicationContext,"Lifecycle onResume called", Toast.LENGTH_LONG).show()
+        // Pause ongoing tasks, such as animations or sensitive data changes
     }
 @Composable
 fun RandomButton(name: String, modifier: Modifier = Modifier) {
