@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PracticeTwo</string>
+    <string name="title_activity_pipeline_print">PipelinePrintActivity</string>
+    <string name="title_activity_exercise_i">ActivityExerciseI</string>
+    <string name="title_activity_compose_training">composeTraining</string>
+    <string name="ProfileImage">an Icon showing user profile</string>
+
+</resources>
