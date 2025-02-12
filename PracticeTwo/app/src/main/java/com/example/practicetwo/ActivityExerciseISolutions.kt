@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -39,8 +40,8 @@ class ActivityExerciseISolutions : ComponentActivity() {
         setContent {
 
             SadTheme {
-            Surface() {
-                    StartApp(listOf("Hadi", "Allesandro", "Luke", "Don", "Ruth")) // Best to have a simple composable function  here instead of any UI code.
+            Surface(shape = RoundedCornerShape(10.dp)) {
+                    StartApp(listOf("Hadi", "Alessandro", "Luke", "Don", "Ruth")) // Best to have a simple composable function  here instead of any UI code.
                 }
             }
         }
@@ -48,7 +49,7 @@ class ActivityExerciseISolutions : ComponentActivity() {
 }
 //renamed this composable so Kotlin compiler won't get confused with the other StartMyApp composable in ActivityExerciseI.kt
 @Composable
-fun StartApp(names: List<String> = listOf("Hadi", "Allesandro", "Luke")) {
+fun StartApp(names: List<String> = listOf("Hadi", "Alessandro", "Luke")) {
 
     var isOnBoarding by remember { mutableStateOf(true) }
 

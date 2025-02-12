@@ -16,7 +16,7 @@ import com.example.practicetwo.ui.theme.PracticeTwoTheme
 
 /*
 
-We are not doing much with this acitvity, either remove it or use it more.
+We are not doing much with this activity, either remove it or use it more.
 Atm we are using the Greeting2 composable in ActivityExerciseI */
 class composeTraining : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

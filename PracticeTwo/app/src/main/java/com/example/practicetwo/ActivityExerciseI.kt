@@ -68,8 +68,13 @@ class ActivityExerciseI : ComponentActivity() {
                 | |_) | '__/ _` |/ __| __| |/ __/ _` | | | || |_   _____  |  _| \ \/ / _ \ '__/ __| / __|/ _ \
                 |  __/| | | (_| | (__| |_| | (_| (_| | | |__   _| |_____| | |___ >  <  __/ | | (__| \__ \  __/
                 |_|   |_|  \__,_|\___|\__|_|\___\__,_|_|    |_|           |_____/_/\_\___|_|  \___|_|___/\___|
+                Exercise Difficulty - Easy:
+                Add a shape parameter to the surface above and make the surface to have rounded corners!
+
+                TODO: do the next 2 exercise here at the end if you have time
 
                 Exercise Difficulty - Medium:
+                Add onclick listener to the surface and change the background colour per click.
                 SadTheme is a theme I made for this exercise. See if you can make your own?
                 tip: Start by looking at Theme.kt file in this project.
 
@@ -77,7 +82,7 @@ class ActivityExerciseI : ComponentActivity() {
                 Write a function that generates list of alphanumeric strings instead of the four names below
                 */
 
-                    StartMyApp(listOf("Hadi", "Allesandro", "Luke", "Don", "Ruth")) // Best to have a simple composable function  here instead of any UI code.
+                    StartMyApp(listOf("Hadi", "Alessandro", "Luke", "Don", "Ruth")) // Best to have a simple composable function  here instead of any UI code.
                 }
             }
         }
@@ -85,7 +90,7 @@ class ActivityExerciseI : ComponentActivity() {
 }
 
 @Composable
-fun StartMyApp(names: List<String> = listOf("Hadi", "Allesandro", "Luke")) {
+fun StartMyApp(names: List<String> = listOf("Hadi", "Alessandro", "Luke")) {
     /*
     *
              _
@@ -163,8 +168,13 @@ fun OnBoardingScreen(modifier: Modifier = Modifier,onBoardingContinueClicked: ()
                |_|   |_|  \__,_|\___|\__|_|\___\__,_|_|    |_|           |_____/_/\_\___|_|  \___|_|___/\___|
 
                Exercise - Medium Difficulty:
-               * "Continue" button and text are on top of each other. Workout which layout element you can use to position elements in a column
-               * User onboarding is made of only one screen atm.
+               * "Continue" button and text are on top of each other.
+               *  Workout which layout element you can use to position elements in a column
+               * Tip: This guide is useful in helping you understand layout element you need to fix this issue
+               * https://www.youtube.com/watch?v=xc8nAcVvpxY
+               * https://developer.android.com/develop/ui/compose/layouts/basics
+
+               * User onboarding is made of osnly one screen atm.
                * Can you add 2 or 3 more steps/screens to it.
                * Each with some text, maybe an image if you feel like it and a "next button"
                * tip:
@@ -187,7 +197,7 @@ fun UserItem(name: String = "Hadi") {
 
  Replace showImage line to:
 val showImage by remember { mutableStateOf(false) }
-Notice how you need to remove .value when using by delegate.
+Notice how you need to remove .value when using "by" delegate.
 */
     val showImage = remember { mutableStateOf(false) }
 Surface(

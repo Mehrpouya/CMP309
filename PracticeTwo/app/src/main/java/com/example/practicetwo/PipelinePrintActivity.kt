@@ -22,6 +22,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.sp
 import com.example.practicetwo.ui.theme.SadTheme
 /*
+
+There are several exercises for you to complete. These are in this file and ActivityExerciseI.kt files.
+
  _______ .-. .-. _______  .---.  ,---.  ,-.  .--.  ,-.
 |__   __|| | | ||__   __|/ .-. ) | .-.\ |(| / /\ \ | |
   )| |   | | | |  )| |   | | |(_)| `-'/ (_)/ /__\ \| |
@@ -30,16 +33,14 @@ import com.example.practicetwo.ui.theme.SadTheme
    `-'   `---(_)   `-'    )---'  |_| \)\`-'|_|  (_)|( __.'
                          (_)         (__)          (_)
 * In addition to exercises and details provided here within each Kotlin code, the following codelab is useful to get you started with some basics of compose
+if you struggle in following exercises, feel free to follow the codelab below before engaging with practical exercises.
 * https://www.youtube.com/watch?v=k3jvNqj4m08&t=147s
 * */
 class PipelinePrintActivity : ComponentActivity() {
-
     var clickCounter: Int = 0
-
-//    var clickCounter
-
+    //var clickCounter
     //perform basic application startup logic.
-    // happens only once for the entire life of the activity
+    //happens only once for the entire life of the activity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -57,8 +58,6 @@ class PipelinePrintActivity : ComponentActivity() {
             }
         }
     }
-
-
 @Composable
 fun RandomButton(name: String, modifier: Modifier = Modifier) {
     val toast = Toast.makeText(
@@ -87,7 +86,9 @@ fun RandomButton(name: String, modifier: Modifier = Modifier) {
                     * val intent = Intent(this@PipelinePrintActivity, ActivityExerciseI::class.java).apply {
                         intent.putExtra("media_id", "a1b2c3")
                     * */
-                    val intent = Intent(this@PipelinePrintActivity, ActivityExerciseISolutions::class.java).apply {
+                    val intent = Intent(
+                        this@PipelinePrintActivity,
+                        ActivityExerciseISolutions::class.java).apply{
                         intent.putExtra("media_id", "a1b2c3") // This is how you can send some data to a new activity.
                         // ...
                     }
@@ -136,54 +137,4 @@ fun RandomButton(name: String, modifier: Modifier = Modifier) {
 
 
     }
-    /*
-// Invoked when the activity might be temporarily destroyed; save the instance state here.
-    override fun onSaveInstanceState(outState: Bundle) {
-//        outState?.run {
-//            putString(GAME_STATE_KEY, gameState)
-//            putString(TEXT_VIEW_KEY, textView.text.toString())
-//        }
-        // Call superclass to save any view hierarchy.
-        super.onSaveInstanceState(outState)
-    }
-override fun onRestart() {
-    super.onRestart()
-    val toast = Toast.makeText(applicationContext, "onRestart Called", Toast.LENGTH_LONG).show()
-}
-
-override fun onPause() {
-    super.onPause()
-    val toast = Toast.makeText(applicationContext, "onPause Called", Toast.LENGTH_LONG).show()
-}
-
-override fun onResume() {
-    super.onResume()
-    val toast = Toast.makeText(applicationContext, "onResume Called", Toast.LENGTH_LONG).show()
-}
-
-override fun onStop() {
-    super.onStop()
-    val toast = Toast.makeText(applicationContext, "onStop Called", Toast.LENGTH_LONG).show()
-}
-
-override fun onDestroy() {
-    super.onDestroy()
-    val toast = Toast.makeText(applicationContext, "onDestroy Called", Toast.LENGTH_LONG).show()
-}
-
-@Composable
-fun Greeting2(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview2() {
-    PracticeTwoTheme {
-        Greeting2("Android")
-    }
-}*/
 }

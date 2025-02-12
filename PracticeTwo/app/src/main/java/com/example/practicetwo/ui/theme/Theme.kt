@@ -72,11 +72,18 @@ fun PracticeTwoTheme(
         content = content
     )
 }
-/* Exercise:
-    See if you can customise material 3 color pallet to your liking.
-    Here's a guide: https://m3.material.io/styles/color/roles#a828e350-1551-45e5-8430-eb643e6a7713
+/*
+                ____                 _   _           _   _  _             _____                   _
+               |  _ \ _ __ __ _  ___| |_(_) ___ __ _| | | || |           | ____|_  _____ _ __ ___(_)___  ___
+               | |_) | '__/ _` |/ __| __| |/ __/ _` | | | || |_   _____  |  _| \ \/ / _ \ '__/ __| / __|/ _ \
+               |  __/| | | (_| | (__| |_| | (_| (_| | | |__   _| |_____| | |___ >  <  __/ | | (__| \__ \  __/
+               |_|   |_|  \__,_|\___|\__|_|\___\__,_|_|    |_|           |_____/_/\_\___|_|  \___|_|___/\___|
 
- */
+Exercise - difficulty hard:
+   See if you can customise material 3 color pallet to your liking.
+   Here's a guide: https://m3.material.io/styles/color/roles#a828e350-1551-45e5-8430-eb643e6a7713
+
+*/
 @Composable
 fun SadTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
