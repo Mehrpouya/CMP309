@@ -82,8 +82,8 @@ fun RandomButton(name: String, modifier: Modifier = Modifier) {
                         | |__|  __/ (_| | |  | | | |
                         |_____\___|\__,_|_|  |_| |_|
                     We use intents to start new activities.
-                    * Create a new activity and use the code below to run your activity from here using onclick listener.
-                    * Once you've tested how intent work, bring back the intent to run ActivityExerciseI::class.java again so you can continue with this practical.
+                    * Run PipelinePrintActivity and see the final solution. Once you know how things roughly should look, go ahead and change intent into
+                    * Once you've tested how intents work, bring back the intent to run ActivityExerciseI::class.java like below comment so you can develop the solutions.
                     * val intent = Intent(this@PipelinePrintActivity, ActivityExerciseI::class.java).apply {
                         intent.putExtra("media_id", "a1b2c3")
                     * */
@@ -104,8 +104,9 @@ fun RandomButton(name: String, modifier: Modifier = Modifier) {
                 |  __/| | | (_| | (__| |_| | (_| (_| | | |__   _| |_____| | |___ >  <  __/ | | (__| \__ \  __/
                 |_|   |_|  \__,_|\___|\__|_|\___\__,_|_|    |_|           |_____/_/\_\___|_|  \___|_|___/\___|
 
-                Exercise 1:
+                Exercise 1 - difficulty easy :
                 Change this button to show multiplies of 2 each time user clicks it.
+                i.e. clicked 2 -> for each click value * 2 -> show button text as clicked 4 and so on
                 */
             Button(
                 onClick = {

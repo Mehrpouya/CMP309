@@ -109,7 +109,7 @@ fun StartMyApp(names: List<String> = listOf("Hadi", "Allesandro", "Luke")) {
     if (isOnBoarding) {
         OnBoardingScreen(onBoardingContinueClicked = { isOnBoarding = false })
     } else {
-        UserManagementSolution(names = names)
+        UserManagement(names = names)
     }
 
 }
@@ -148,7 +148,7 @@ fun OnBoardingScreen(modifier: Modifier = Modifier,onBoardingContinueClicked: ()
                             |_| \_|\___/ \__|_|\___\___|
 
         Notice how I am calling Greeting2 from composeTraining.kt file.
-        This is a way to reuse code and components.
+        This is a way to reuse code and components we develop.
 * */
     Greeting2("CMP309 students", modifier)
     Button(onClick = onBoardingContinueClicked) {
@@ -163,128 +163,130 @@ fun OnBoardingScreen(modifier: Modifier = Modifier,onBoardingContinueClicked: ()
                |_|   |_|  \__,_|\___|\__|_|\___\__,_|_|    |_|           |_____/_/\_\___|_|  \___|_|___/\___|
 
                Exercise - Medium Difficulty:
+               * "Continue" button and text are on top of each other. Workout which layout element you can use to position elements in a column
                * User onboarding is made of only one screen atm.
                * Can you add 2 or 3 more steps/screens to it.
                * Each with some text, maybe an image if you feel like it and a "next button"
-               * tip: You need to define an onboarding stepCounter similar to our isOnBoarding bool
-               * using remember and mutablestateof.
-               * Each different onboarding screen can be a composable function.
+               * tip:
+               * - You need to define an onboarding stepCounter similar to our isOnBoarding bool
+               * - You need to use remember and mutablestateof.
+               * - Each different onboarding screen can be a composable function.
        * */
 }
 
 @Composable
 fun UserItem(name: String = "Hadi") {
-    val context = LocalContext.current
+    val context = LocalContext.current // We need context for making toasts and launching activities.
     val emailed = remember {mutableStateOf(false)}
+/* Notice
+                         _   _       _   _
+                        | \ | | ___ | |_(_) ___ ___
+                        |  \| |/ _ \| __| |/ __/ _ \
+                        | |\  | (_) | |_| | (_|  __/
+                        |_| \_|\___/ \__|_|\___\___|
+
+ Replace showImage line to:
+val showImage by remember { mutableStateOf(false) }
+Notice how you need to remove .value when using by delegate.
+*/
     val showImage = remember { mutableStateOf(false) }
+Surface(
+    color = MaterialTheme.colorScheme.primary,
+    modifier = Modifier.padding(10.dp)
+) {
+    /* Notice:
+                 _   _       _   _
+                | \ | | ___ | |_(_) ___ ___
+                |  \| |/ _ \| __| |/ __/ _ \
+                | |\  | (_) | |_| | (_|  __/
+                |_| \_|\___/ \__|_|\___\___|
+
+    See how we can include additional modifiers to customise UI elements.
+    */
+   /* Exercise
+            ____                 _   _           _   _  _             _____                   _
+           |  _ \ _ __ __ _  ___| |_(_) ___ __ _| | | || |           | ____|_  _____ _ __ ___(_)___  ___
+           | |_) | '__/ _` |/ __| __| |/ __/ _` | | | || |_   _____  |  _| \ \/ / _ \ '__/ __| / __|/ _ \
+           |  __/| | | (_| | (__| |_| | (_| (_| | | |__   _| |_____| | |___ >  <  __/ | | (__| \__ \  __/
+           |_|   |_|  \__,_|\___|\__|_|\___\__,_|_|    |_|           |_____/_/\_\___|_|  \___|_|___/\___|
+
+           Exercise - Easy Difficulty:
+        - Go ahead and uncomment fillMaxWidth.
+        - Change the 0.8f value to 1 and values between 0-1 and notice the change.
+
+           Exercise Difficulty medium:
+        1. Can you try and add an image to each list item?
+        Tip:
+            This is how you can show an image
+                Image(painter = painterResource(id=R.drawable.zombie_head),
+                contentDescription = R.string.ProfileImage.toString())
+        2. Animate the image appearing and disappearing?
+        * Here's a guide on how to do it
+        * https://developer.android.com/develop/ui/compose/animation/composables-modifiers
+        *
+                    * */
+    Row() {
+        Column(modifier = Modifier.padding(10.dp)/*.fillMaxWidth(0.8f)*/) {
+            Text("User, ")
+            //Add another text component to show user name
+            //Add a placeholder image that becomes visible when user clicks the button
+            // if showImage is true...
+            /*Image(painter = painterResource(id=R.drawable.zombie_head),
+                contentDescription = R.string.ProfileImage.toString())*/
+        }
+        Column(modifier = Modifier.padding(10.dp)/*.fillMaxWidth(0.8f)*/) {//change padding and add other modifiers
+            /* Exercise
+            *
+            *
+             ____                 _   _           _   _  _             _____                   _
+            |  _ \ _ __ __ _  ___| |_(_) ___ __ _| | | || |           | ____|_  _____ _ __ ___(_)___  ___
+            | |_) | '__/ _` |/ __| __| |/ __/ _` | | | || |_   _____  |  _| \ \/ / _ \ '__/ __| / __|/ _ \
+            |  __/| | | (_| | (__| |_| | (_| (_| | | |__   _| |_____| | |___ >  <  __/ | | (__| \__ \  __/
+            |_|   |_|  \__,_|\___|\__|_|\___\__,_|_|    |_|           |_____/_/\_\___|_|  \___|_|___/\___|
+
+              * Exercise - Medium Difficulty:
+            * Try using OutlinedButton instead of Button
+            * */
+            Button (
+                onClick = {
+                    //Notice for creating a toast, you need a variable called context.
+                    Toast.makeText(context, "Welcome email sent to $name", Toast.LENGTH_SHORT)
+                        .show()
+                    emailed.value = !emailed.value
+                    showImage.value = !showImage.value
 
 
-//    Toast.makeText(
-//        /* context = */ getBaseContext(),
-//        /* text = */ "second activity created",
-//        /* duration = */ Toast.LENGTH_SHORT
-//    ).show()
-    Surface(
-        color = MaterialTheme.colorScheme.primary,
-        modifier = Modifier.padding(10.dp)
-    ) {
-        /*
-                     _   _       _   _
-                    | \ | | ___ | |_(_) ___ ___
-                    |  \| |/ _ \| __| |/ __/ _ \
-                    | |\  | (_) | |_| | (_|  __/
-                    |_| \_|\___/ \__|_|\___\___|
+                })
+            {
+                //Change this text based on the status of emailed variable.
+                // If emailed is true, button text should show, already welcomed.
+                //else show Welcome them.
 
-        See how we can include additional modifiers to customise UI elements.
-
-       *        ____                 _   _           _   _  _             _____                   _
-               |  _ \ _ __ __ _  ___| |_(_) ___ __ _| | | || |           | ____|_  _____ _ __ ___(_)___  ___
-               | |_) | '__/ _` |/ __| __| |/ __/ _` | | | || |_   _____  |  _| \ \/ / _ \ '__/ __| / __|/ _ \
-               |  __/| | | (_| | (__| |_| | (_| (_| | | |__   _| |_____| | |___ >  <  __/ | | (__| \__ \  __/
-               |_|   |_|  \__,_|\___|\__|_|\___\__,_|_|    |_|           |_____/_/\_\___|_|  \___|_|___/\___|
-
-               Exercise - Medium Difficulty:
-            - Go ahead and uncomment fillMaxWidth.
-            - Change the 0.8f value to 1 and values between 0-1 and notice the change.
-
-        * */
-        Row() {
-            Column(modifier = Modifier.padding(10.dp)/*.fillMaxWidth(0.8f)*/) {
-                Text("User, ")
-                Text(text = name)
-                //generated the animation code using Gemini AI
-                AnimatedVisibility(
-                    visible = showImage.value,
-                    enter = fadeIn(animationSpec = tween(durationMillis = 1000)),
-                    exit = fadeOut(animationSpec = tween(durationMillis = 500))
-                ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.zombie_head),
-                        contentDescription = "Zombie Head"
-                    )
-                }
-                /*Image(painter = painterResource(id=R.drawable.zombie_head),
-                    contentDescription = R.string.ProfileImage.toString())*/
-            }
-            Column(modifier = Modifier.padding(10.dp)/*.fillMaxWidth(0.8f)*/) {
-                Button (
-                    onClick = {
-                        //Notice for creating a toast, you need a variable called context.
-                        Toast.makeText(context, "Welcome email sent to $name", Toast.LENGTH_SHORT)
-                            .show()
-                        emailed.value = !emailed.value
-                        showImage.value = !showImage.value
-                        /*
-                         _____                   _
-                        | ____|_  _____ _ __ ___(_)___  ___
-                        |  _| \ \/ / _ \ '__/ __| / __|/ _ \
-                        | |___ >  <  __/ | | (__| \__ \  __/
-                        |_____/_/\_\___|_|  \___|_|___/\___|
-
-                        Exercise 2:
-                        * Can you try and animate the image appearing and disappearing?
-                        * Here's a guide on how to do it
-                        * https://developer.android.com/develop/ui/compose/animation/composables-modifiers
-                        *
-                        * */
-//                        find
-//                        val intent = Intent(this@PipelinePrintActivity, ActivityExerciseI::class.java).apply {
-//                            intent.putExtra("media_id", "a1b2c3")
-//                            // ...
-//                        }
-//                        startActivity(intent)
-
-                    })
-                    /*when (result) { //Check out https://kotlinlang.org/docs/control-flow.html#when-expressions-and-statements for conditionals
-                    null ->  "click me"
-                    else  -> "click $result"
-                }*/
-                {
-                    Text(if(emailed.value) "Already welcomed!" else "Welcome them")
-                }
+                Text("Welcome them")
             }
         }
     }
+}
 }
 
 @Composable
 fun AnotherUI() {
-    /*
-    Take a look here and make a few changes to your components using modifiers
-    * https://developer.android.com/develop/ui/compose/modifiers-list
-    * */
-    Surface(color = Color.Black) {
-        Box() {
-            Text(
-                "Another UI", modifier = Modifier.padding(24.0.dp)
-            )
-        }
+/*
+Take a look here and make a few changes to your components using modifiers. We are not currently calling this composable.
+* https://developer.android.com/develop/ui/compose/modifiers-list
+* */
+Surface(color = Color.Black) {
+    Box() {
+        Text(
+            "Another UI", modifier = Modifier.padding(24.0.dp)
+        )
     }
+}
 }
 
 /*
 
- _____                   _
+_____                   _
 | ____|_  _____ _ __ ___(_)___  ___
 |  _| \ \/ / _ \ '__/ __| / __|/ _ \
 | |___ >  <  __/ | | (__| \__ \  __/
@@ -298,37 +300,37 @@ Remember to add the innerPadding to the content of the Scaffold.
 Go ahead, copy one of the previews
 * */
 @Preview(
-    name = "Square Preview",
-    widthDp = 50,
-    heightDp = 50,
-    showBackground = true,
-    backgroundColor = 0xFF00FF00,
-    showSystemUi = true,
-    group = "MyPreviews"
+name = "Square Preview",
+widthDp = 50,
+heightDp = 50,
+showBackground = true,
+backgroundColor = 0xFF00FF00,
+showSystemUi = true,
+group = "MyPreviews"
 )
 @Composable
 fun SquareComposablePreview() {
-    UserItem()
+UserItem()
 }
 
 @Preview(group = "MyPreviews")
 @Composable
 fun DefaultPrev() {
-    StartMyApp()
+StartMyApp()
 }
 
 //Not connected to any of our composable functions, just me testing different layout components.
 @Preview(showBackground = true)
 @Composable
 fun ScaffoldPreview() {
-    PracticeTwoTheme {
-        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-            Box(modifier = Modifier.padding(innerPadding)) {
-                UserItem()
-            }
-            Box(modifier = Modifier.padding(innerPadding)) {
-                AnotherUI()
-            }
+PracticeTwoTheme {
+    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+        Box(modifier = Modifier.padding(innerPadding)) {
+            UserItem()
+        }
+        Box(modifier = Modifier.padding(innerPadding)) {
+            AnotherUI()
         }
     }
+}
 }
