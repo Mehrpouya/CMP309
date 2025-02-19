@@ -114,7 +114,7 @@ fun RandomButton(name: String, modifier: Modifier = Modifier) {
                     * */
                     val intent = Intent(
                         this@PipelinePrintActivity,
-                        ActivityExerciseISolutions::class.java).apply{
+                        ActivityExerciseI::class.java).apply{
                         intent.putExtra("media_id", "a1b2c3") // This is how you can send some data to a new activity.
                         // ...
                     }

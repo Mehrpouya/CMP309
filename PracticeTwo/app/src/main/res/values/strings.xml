@@ -4,5 +4,7 @@
     <string name="title_activity_exercise_i">ActivityExerciseI</string>
     <string name="title_activity_compose_training">composeTraining</string>
     <string name="ProfileImage">an Icon showing user profile</string>
+    <string name="title_activity_week_five_navigation">WeekFiveNavigation</string>
+    <string name="title_activity_week_five_nav">WeekFiveNav</string>
 
 </resources>

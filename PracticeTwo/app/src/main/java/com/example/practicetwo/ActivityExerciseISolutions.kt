@@ -60,7 +60,7 @@ fun StartApp(names: List<String> = listOf("Hadi", "Alessandro", "Luke")) {
 
 
 @Composable
-fun UserManagementSolution(modifier: Modifier = Modifier, names: List<String>?) {
+        fun UserManagementSolution(modifier: Modifier = Modifier, names: List<String>?) {
     Surface(
         // color = MaterialTheme.colorScheme.error,
         modifier = Modifier.padding(20.dp)
