@@ -81,7 +81,6 @@ fun BottomNavigationBar(navController: NavHostController) {
                     }
                 }
             )
-
         }
     }
     }
@@ -105,15 +104,10 @@ fun HomeScreen() {
         Text("Home Screen")
     }
 }
-
 @Composable
 fun FavMoviesScreen(modifier: Modifier = Modifier) {
-    UserManagementSolution(modifier, listOf("Coffee & Cigarettes", "Talk to her", "Apocalypse now", "Lost highway", "Kneecap"))
-//    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-//        Text("Profile Screen")
-//    }
+    UserManagementSolution(modifier, listOf("Coffee & Cigarettes", "Talk to her", "Apocalypse now"))
 }
-
 @Composable
 fun SettingsScreen() {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
