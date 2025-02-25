@@ -16,22 +16,10 @@ Use *this* post as a template to make your own case study.
 3. Use the headers from here as a guidance.
 4. Work with your peer and complete your analysis.
 
-# Objectives (1 hour)
+# Deconstruct / redesign a mobile app
+## What to consider during your analysis
+Visualise app main screens, screen relations, the user flow and interaction design
 
-- Work with a group of 4 students to deconstruct and analyse a mobile app of your choice.
-- Spend 5-10 minutes to choose a mobile app.
-- Spend 5-10 minutes to plan how you are going to work as a team?
-  - Who is going to produce screengrabs of different screens, someone to create the flowchart,...
-- Analyse the app as a group (45 minutes)
-
-## Prepare (30 minutes)
-- Document your findings as power point presentation / or a Post for this blog.
-
-**Try** to choose something **not** too complex, so you can complete first draft of your analysis during lab time.
-
-
-# What to consider during your analysis
-1. Visualize the user flow and interaction design:
   - Use mind map / flowchart tools such as [sketch.it](https://www.sketch.com/), draw.io, freemind and others to draw your user journeys. These can be [wireflows](https://www.nngroup.com/articles/wireflows/), flow charts or task diagrams.
   - What are your apps main screens? What are the main [layouts](https://developer.android.com/design/ui/mobile/guides/layout-and-content/layout-basics) in each screen? What are your user's main goals? What steps do they take to achieve those goals? What are decision points in your app, whjere users need to choose between options?  
   - Make a list of different [components](https://developer.android.com/design/ui/mobile/guides/components/material-overview) in your app
@@ -46,6 +34,26 @@ Use *this* post as a template to make your own case study.
 
   This [article](https://www.nngroup.com/articles/user-journeys-vs-user-flows/) is a good corporate read and has some good points, but nothing is better than you choosing an app and being resourceful and creative in deconstructing it as a group.
 
+
+## Analyse (1 hour)
+
+- Work with a group of 4 students to deconstruct and analyse a mobile app of your choice.
+- Spend 5-10 minutes to choose a mobile app.
+- Spend 5-10 minutes to plan how you are going to work as a team?
+  - Who is going to produce screengrabs of different screens, someone to create the flowchart,...
+- Analyse the app as a group (45 minutes)
+
+## Prepare (30 minutes)
+
+Document your findings as power point presentation / or a Post for this blog.
+
+**Try** to choose something **not** too complex, so you can complete first draft of your analysis during lab time.
+
+## Share
+The last 30 minutes, we will go around and look at different case studies different groups conducted.
+
+
+#
 **Technology behind this blog**
 Jekyll and github pages! They both support markdown language. To find out how to use markdown, take a look at the [overview post]
 
