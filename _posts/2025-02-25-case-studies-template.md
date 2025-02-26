@@ -21,7 +21,7 @@ Only use the Github pages post approach if you feel comfortable with github and 
 There are two ways to complete today's lab. Either by creating a new post for our github pages repository to present your case study or use PowerPoint to document your analysis.
 
 <figure class="half">
-    <a href="/images/authenticationUserFlow.png"><img src="/images/authenticationUserFlow.png"></a>
+    <a href="/images/authenticationUserFlow.png"><img src="/assets/images/authenticationUserFlow.png"></a>
     <a href="/images/wireFlowExample.png"><img src="/images/wireFlowExample.png"></a>
     <figcaption>Left shows an example of hand drawn screen flow and right showing a digital version</figcaption>
 </figure>
