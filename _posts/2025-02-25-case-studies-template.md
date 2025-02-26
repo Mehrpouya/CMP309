@@ -73,7 +73,7 @@ Wireflow, flowchart, ....
 - App architecture and screen layouts. Map out how the content and features are structured across different screens.
 - What are your apps main screens? What are the main [layouts](https://developer.android.com/design/ui/mobile/guides/layout-and-content/layout-basics) in each screen?
 - What is the relationship between different screens?
-- How does user interacts with navigation and how does that guide them throughout their interaction with your app.
+- How does user interact with navigation and how does that guide them throughout their interaction with your app.
 
 ## Action / Task list
 - What are your user's main goals? What steps do they take to achieve those goals? What are decision points in your app, where users need to choose between options?  
