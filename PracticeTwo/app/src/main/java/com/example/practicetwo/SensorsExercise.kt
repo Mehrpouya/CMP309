@@ -16,8 +16,10 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -39,6 +41,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.values
 import com.example.practicetwo.ui.theme.PracticeTwoTheme
+import com.example.practicetwo.ui.theme.SadTheme
 import kotlin.io.path.moveTo
 import kotlin.ranges.coerceIn
 
@@ -52,7 +55,11 @@ class SensorsExercise : ComponentActivity() {
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         soundPlayer = SoundPlayer(this)
         setContent {
+            SadTheme {
+                Surface(modifier = Modifier.padding(16.dp),shape = RoundedCornerShape(10.dp)) {
             SensorScreen(sensorManager, soundPlayer)
+                }
+            }
         }
     }
     override fun onDestroy() {
@@ -63,46 +70,45 @@ class SensorsExercise : ComponentActivity() {
 @Composable
 fun SensorScreen(sensorManager: SensorManager, soundPlayer: SoundPlayer) {
     var accelerometerData by remember { mutableStateOf("Accelerometer: Not Available") }
-    var gyroscopeData by remember { mutableStateOf("Gyroscope: Not Available") }
-    var lightSensorData by remember { mutableStateOf("Light Sensor: Not Available") }
-    var gyroY by remember { mutableStateOf(1.0f) }
-
-
-
     val accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
-    val gyroscope = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE)
-    val lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
+
 
     SensorEffect(sensorManager, accelerometer) { event ->
         accelerometerData = "Accelerometer:\n x: ${event.values[0]}\n y: ${event.values[1]}\n z: ${event.values[2]}"
     }
 
+    var gyroY by remember { mutableStateOf(1.0f) }
+    var gyroscopeData by remember { mutableStateOf("Gyroscope: Not Available") }
+    val gyroscope = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE)
+
     SensorEffect(sensorManager, gyroscope) { event ->
         gyroscopeData = "Gyroscope:\n x: ${event.values[0]}\n y: ${event.values[1]}\n z: ${event.values[2]}"
             val rotationRate = event.values[1] // Use the y-axis rotation
             val mappedRate = mapGyroscopeToPitch(rotationRate)
-        if(gyroY>=mappedRate)
-        gyroY = mappedRate
-           // soundPlayer.playSound(gyroY)
+            gyroY = mappedRate
+        //Comment next line out to stop it from playing automatically.
+            soundPlayer.playSound(gyroY)
 
     }
+    var lightSensorData by remember { mutableStateOf("Light Sensor: Not Available") }
+    val lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
 
     SensorEffect(sensorManager, lightSensor) { event ->
         lightSensorData = "Light Sensor:\n ${event.values[0]} lux"
     }
 
-    Column {
+    Column (modifier = Modifier.padding(16.dp)) {
         Text(text = accelerometerData)
         Text(text = gyroscopeData)
         Text(text = lightSensorData)
-        Button(onClick = {
-            soundPlayer.playSound(gyroY)
-        }) {
-            Text("Play Sound")
-        }
+
+    }
+    Button(onClick = {
+        soundPlayer.playSound(gyroY)
+    }) {
+        Text("Play Sound")
     }
 }
-
 @Composable
 fun SensorEffect(
     sensorManager: SensorManager,

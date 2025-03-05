@@ -4,12 +4,9 @@ import android.content.Context
 import android.media.AudioAttributes
 import android.media.SoundPool
 import android.util.Log
-
 class SoundPlayer(context: Context) {
-
     private val soundPool: SoundPool
     private val soundId: Int
-
     init {
         val audioAttributes = AudioAttributes.Builder()
             .setUsage(AudioAttributes.USAGE_GAME)
@@ -26,7 +23,6 @@ class SoundPlayer(context: Context) {
         val descriptor = assetManager.openFd("aNote.wav") // Replace "sound.wav" with your sound file
         soundId = soundPool.load(descriptor, 1)
     }
-
     fun playSound(rate: Float = 1.0f) {
         // Check if the sound is loaded
         if (soundId == 0) {
@@ -35,7 +31,6 @@ class SoundPlayer(context: Context) {
         }
         soundPool.play(soundId, 1f, 1f, 1, 0, rate)
     }
-
     fun release() {
         soundPool.release()
     }
