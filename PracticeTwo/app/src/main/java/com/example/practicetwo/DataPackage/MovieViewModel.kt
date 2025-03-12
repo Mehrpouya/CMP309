@@ -8,17 +8,20 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
 class MovieViewModel(application: Application) : AndroidViewModel(application) {
-
     private val repository: MovieRepository = MovieRepository.getRepository(application)
-
+//private val repository: MovieRepositorySharedPref = MovieRepositorySharedPref.getRepository(application)
+    //This means that allMovies is a stream of data
+    //allMovies will emit lists of movies over time.
     val allMovies: Flow<List<Movie>> = repository.getAllMovies()
 
     fun insertMovie(movie: Movie) {
+        //launch is a coroutine builder. It's a function that starts a new coroutine.
+        //Start a new coroutine, and make sure it's tied to the lifecycle of this ViewModel.
+        //When the ViewModel is cleared, cancel this coroutine.
         viewModelScope.launch {
             repository.insertMovie(movie)
         }
     }
-
     fun updateMovie(movie: Movie) {
         viewModelScope.launch {
             repository.updateMovie(movie)
