@@ -10,11 +10,15 @@ activityCompose = "1.10.0"
 composeBom = "2024.04.01"
 materialIconsCore = "1.6.6"
 materialIconsExtended = "1.6.6"
+<<<<<<< HEAD
 roomCommon = "2.6.1"
 roomCompiler = "2.6.1"
 roomKtx = "2.6.1"
 roomRuntime = "2.6.1"
 ksp = "1.9.22-1.0.17" # Or the version you want to use
+=======
+firebaseCrashlyticsBuildtools = "3.0.3"
+>>>>>>> 65b903a0a77250bb1c953530a15b9284fe5b7d65
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -35,7 +39,11 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialIconsExtended" }
+<<<<<<< HEAD
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomCompiler" }
+=======
+firebase-crashlytics-buildtools = { group = "com.google.firebase", name = "firebase-crashlytics-buildtools", version.ref = "firebaseCrashlyticsBuildtools" }
+>>>>>>> 65b903a0a77250bb1c953530a15b9284fe5b7d65
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
