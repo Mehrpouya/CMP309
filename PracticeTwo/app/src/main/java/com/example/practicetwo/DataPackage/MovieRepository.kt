@@ -1,10 +1,15 @@
 package com.example.practicetwo.DataPackage
 
 import android.content.Context
+import com.example.practicetwo.isNetworkAvailable
+import com.example.practicetwo.network.MovieDC
+import com.example.practicetwo.network.RetrofitClient
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import java.io.IOException
 
 
-class MovieRepository(private val movieDao: MovieDao) {
+class MovieRepository(private val movieDao: MovieDao,private val context: Context) {
 
     fun getAllMovies(): Flow<List<Movie>> = movieDao.getAllMovies()
 
@@ -20,6 +25,7 @@ class MovieRepository(private val movieDao: MovieDao) {
 
     suspend fun deleteMovie(movie: Movie) = movieDao.deleteMovie(movie)
 
+
     companion object {
         @Volatile
         private var INSTANCE: MovieRepository? = null
@@ -27,7 +33,7 @@ class MovieRepository(private val movieDao: MovieDao) {
         fun getRepository(context: Context): MovieRepository {
             return INSTANCE ?: synchronized(this) {
                 val database = MovieDatabase.getDatabase(context)
-                val instance = MovieRepository(database.movieDao())
+                val instance = MovieRepository(database.movieDao(),context)
                 INSTANCE = instance
                 instance
             }

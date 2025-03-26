@@ -47,6 +47,9 @@ android {
 }
 
 dependencies {
+    implementation(libs.retrofit2.retrofit)
+    implementation(libs.converter.gson) // If using Gson
+    implementation(libs.okhttp)
     //Other dependencies
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
