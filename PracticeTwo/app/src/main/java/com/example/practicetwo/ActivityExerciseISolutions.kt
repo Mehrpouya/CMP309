@@ -1,4 +1,5 @@
 package com.example.practicetwo
+import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -32,6 +33,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.practicetwo.ui.theme.PracticeTwoTheme
 import com.example.practicetwo.ui.theme.SadTheme
+import java.io.BufferedReader
+import java.io.InputStreamReader
+
 class ActivityExerciseISolutions : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
