@@ -2,7 +2,11 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+<<<<<<< HEAD
+    alias(libs.plugins.kotlin.ksp)
+=======
     id("org.jetbrains.kotlin.kapt") // Apply the KAPT plugin here
+>>>>>>> 65b903a0a77250bb1c953530a15b9284fe5b7d65
 
 }
 
@@ -58,8 +62,14 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
+<<<<<<< HEAD
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+=======
     implementation(libs.firebase.crashlytics.buildtools)
 
+>>>>>>> 65b903a0a77250bb1c953530a15b9284fe5b7d65
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -70,6 +80,8 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.material.icons.core) // Or latest version
     implementation(libs.material.icons.extended) // Or latest version
+<<<<<<< HEAD
+=======
     implementation("androidx.navigation:navigation-compose:2.7.7") // Or latest version
     val roomVersion = "2.6.1"
 
@@ -95,5 +107,6 @@ dependencies {
     implementation("com.google.code.gson:gson:2.10.1")
 
 
+>>>>>>> 65b903a0a77250bb1c953530a15b9284fe5b7d65
 
 }

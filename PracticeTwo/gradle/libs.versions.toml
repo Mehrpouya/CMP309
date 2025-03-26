@@ -1,7 +1,11 @@
 [versions]
 agp = "8.8.0"
+<<<<<<< HEAD
 converterGson = "2.9.0"
 kotlin = "2.0.0"
+=======
+kotlin = "1.9.22"
+>>>>>>> e2cd925df3dd4f4e1a5d427e5f3bec15bc4afe66
 coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -11,14 +15,30 @@ activityCompose = "1.10.0"
 composeBom = "2024.04.01"
 materialIconsCore = "1.6.6"
 materialIconsExtended = "1.6.6"
+<<<<<<< HEAD
+roomCommon = "2.6.1"
+roomCompiler = "2.6.1"
+roomKtx = "2.6.1"
+roomRuntime = "2.6.1"
+ksp = "1.9.22-1.0.17" # Or the version you want to use
+=======
 firebaseCrashlyticsBuildtools = "3.0.3"
+<<<<<<< HEAD
 okhttp = "4.11.0"
 retrofitVersion = "2.9.0"
+=======
+>>>>>>> 65b903a0a77250bb1c953530a15b9284fe5b7d65
+>>>>>>> e2cd925df3dd4f4e1a5d427e5f3bec15bc4afe66
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-material-icons-core = { module = "androidx.compose.material:material-icons-core", version.ref = "materialIconsCore" }
+<<<<<<< HEAD
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
+=======
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+>>>>>>> e2cd925df3dd4f4e1a5d427e5f3bec15bc4afe66
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -33,12 +53,20 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialIconsExtended" }
+<<<<<<< HEAD
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomCompiler" }
+=======
 firebase-crashlytics-buildtools = { group = "com.google.firebase", name = "firebase-crashlytics-buildtools", version.ref = "firebaseCrashlyticsBuildtools" }
+<<<<<<< HEAD
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 retrofit2-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofitVersion" }
+=======
+>>>>>>> 65b903a0a77250bb1c953530a15b9284fe5b7d65
+>>>>>>> e2cd925df3dd4f4e1a5d427e5f3bec15bc4afe66
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version = "2.0.20" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
