@@ -9,7 +9,6 @@ data class MoviesDatabase(
     @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "movie_title") val title: String,
     @ColumnInfo(name = "director", index = true) val director: String,
-    @ColumnInfo(name = "move_poster", typeAffinity = ColumnInfo.BLOB) val moviePoster: ByteArray // Store as BLOB
-
+    @ColumnInfo(name = "move_poster", typeAffinity = ColumnInfo.BLOB) val moviePoster: ByteArray, // Store as BLOB
     val year: Int
 )

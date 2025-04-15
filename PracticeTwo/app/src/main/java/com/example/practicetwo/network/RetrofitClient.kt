@@ -19,7 +19,7 @@ object RetrofitClient {
                 .header("accept", "application/json")
                 .header(
                     "Authorization",
-                    "Bearer "
+                    "Bearer <APIKEY> "
                 )
                 .build()
 

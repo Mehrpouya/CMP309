@@ -15,6 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PracticeTwo">
         <activity
+            android:name=".WebAppIntegration"
+            android:exported="true"
+            android:label="@string/title_activity_web_app_integration"
+            android:theme="@style/Theme.PracticeTwo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".MovieActivity"
             android:exported="true"
             android:label="@string/title_activity_movie"

@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
+import com.example.practicetwo.DataPackage.Helpers.generateNumericalStrings
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
@@ -37,6 +38,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -51,6 +53,12 @@ import com.example.practicetwo.ui.theme.PracticeTwoTheme
 import com.example.practicetwo.ui.theme.SadTheme
 import java.io.ByteArrayOutputStream
 import java.io.InputStream
+
+
+import android.webkit.WebView
+import android.webkit.WebViewClient
+
+
 
 class MovieActivity  : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -90,7 +98,6 @@ class MovieActivity  : ComponentActivity() {
 @Composable
 fun MovieSearchScreen(movieViewModel: MovieAPIViewModel = viewModel(), onMovieClick: (Int) -> Unit) {
     var searchQuery by remember { mutableStateOf("") }
-
     Column(modifier = Modifier.padding(16.dp)) {
         TextField(
             value = searchQuery,
@@ -128,6 +135,7 @@ fun MovieList(movies: List<MovieDC>, onMovieClick: (Int) -> Unit) {
 
 @Composable
 fun MovieDetailsScreen(movieViewModel: MovieAPIViewModel = viewModel(), movieId: Int) {
+
     movieViewModel.getMovieById(movieId)
     val movie = movieViewModel.selectedMovie
     if (movie != null) {

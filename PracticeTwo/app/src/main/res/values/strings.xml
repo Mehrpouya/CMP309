@@ -8,5 +8,6 @@
     <string name="title_activity_week_five_nav">WeekFiveNav</string>
     <string name="title_activity_sensors_exercise">SensorsExercise</string>
     <string name="title_activity_movie">MovieActivity</string>
+    <string name="title_activity_web_app_integration">WebAppIntegration</string>
 
 </resources>
