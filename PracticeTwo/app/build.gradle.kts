@@ -48,8 +48,7 @@ android {
 
 dependencies {
     implementation("androidx.browser:browser:1.7.0") // Or the latest version
-
-
+    implementation("androidx.glance:glance-appwidget:1.1.0")
     implementation(libs.retrofit2.retrofit)
     implementation(libs.converter.gson) // If using Gson
     implementation(libs.okhttp)
