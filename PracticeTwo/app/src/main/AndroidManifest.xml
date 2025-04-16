@@ -26,6 +26,17 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".WebAppIntegrationCustomTabs"
+            android:exported="true"
+            android:label="WebAppIntegrationCustomTabs"
+            android:theme="@style/Theme.PracticeTwo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".MovieActivity"
             android:exported="true"
             android:label="@string/title_activity_movie"
